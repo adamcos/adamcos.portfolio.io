@@ -5,19 +5,58 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
     <title>Adam Costello Photography</title>
+    <script type="text/javascript">
+        let randomNumber = Math.floor(Math.random() * 100) + 1
+        function docWrite(randomNumber) {
+            document.write(randomNumber);
+        }
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
+
+    </script>
 </head>
 
 <body>
+    Random number:
+    <script>docWrite(randomNumber)</script>
     <nav>Adam &nbsp; Costello &nbsp; Photography</nav>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
 
-    <img src="images/fuji-lifts006.jpg"><img src="images/fuji-lifts021.jpg"><img src="images/fuji-lifts004.jpg">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/fuji-lifts006.jpg">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <img src="images/fuji-lifts025.jpg"><img src="images/fuji-lifts018.jpg"><img src="images/fuji-lifts003.jpg">
-
-    <img src="images/fuji-lifts017.jpg"><img src="images/fuji-lifts005.jpg"><img src="images/fuji-lifts010.jpg">
-
-
+    <img src="images/fuji-lifts006.jpg"><img src="images/fuji-lifts021.jpg"><img src="images/fuji-lifts004.jpg"><img
+        src="images/fuji-lifts025.jpg"><img src="images/fuji-lifts018.jpg"><img src="images/fuji-lifts003.jpg"><img
+        src="images/fuji-lifts017.jpg"><img src="images/fuji-lifts005.jpg"><img src="images/fuji-lifts010.jpg">
 </body>
 
 </html>

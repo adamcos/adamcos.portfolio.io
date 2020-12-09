@@ -1,0 +1,1305 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Image Carousel : Proof of Concept</title>
+  <style>
+    /* ----- BEGIN STYLE mdash_core_v1.0.1.css.cshtml ----- */
+
+
+    /* Client-specific Styles */
+    /* Force Outlook to provide a "view in browser" menu link. */
+    #outlook a {
+      padding: 0;
+    }
+
+    /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
+    body {
+      -moz-box-sizing: border-box;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+    }
+
+    body * {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    /* Force Hotmail to display emails at full width */
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    #background {
+      line-height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+    }
+
+    /* End Reset */
+
+    /* IMAGES */
+    img {
+      -ms-interpolation-mode: bicubic;
+      outline: none;
+      text-decoration: none;
+    }
+
+    a img {
+      border: none;
+    }
+
+    .image-fix {
+      display: block;
+    }
+
+    .clearfix {
+      clear: both;
+    }
+
+    /* TABLES */
+    /* Outlook 07, 10 Padding issue fix
+    Bring inline: No.*/
+    table td {
+      border-collapse: collapse;
+    }
+
+    /* Remove spacing around Outlook 07, 10 tables
+    Bring inline: Yes */
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    div,
+    p,
+    a,
+    li,
+    td,
+    span {
+      -webkit-text-size-adjust: none;
+    }
+
+    /* ----- MOBILE ----- */
+    @media only screen and (max-width: 600px) {
+
+      /* Part one of controlling phone number linking for mobile. */
+      *[class~="m-stop-link"],
+      *[class~="m-stop-link"] a {
+        text-decoration: none !important;
+        pointer-events: none !important;
+        cursor: default !important;
+      }
+
+      /* ----- GENERAL USE CLASSES ----- */
+      *[class~=m-full] {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        clear: both !important;
+        display: block !important;
+        float: none !important;
+        height: auto !important;
+        width: 100% !important;
+      }
+
+      table[class~=m-full] {
+        display: table !important;
+        /* tables act goofy if displayed as block, overwrite this property */
+      }
+
+      *[class~=m-hide] {
+        display: none !important;
+      }
+
+      *[class~=m-show] {
+        display: block !important;
+        font-size: inherit !important;
+        line-height: inherit !important;
+        max-height: none !important;
+      }
+
+      table[class~=m-show] {
+        display: table !important;
+      }
+
+      td[class~=m-show] {
+        display: table-cell !important;
+      }
+
+      img[class~=m-show] {
+        height: auto !important;
+        visibility: visible !important;
+        width: auto !important;
+      }
+
+      *[class~=m-center] {
+        float: none !important;
+        margin: auto;
+        text-align: center;
+      }
+
+      *[class~=m-align-left] {
+        float: left !important;
+        text-align: left !important;
+      }
+
+      *[class~=m-align-right] {
+        float: right !important;
+        text-align: right !important;
+      }
+
+      *[class~=m-width-320] {
+        width: 320px !important;
+      }
+
+      *[class~=m-width-318] {
+        width: 318px !important;
+      }
+
+      *[class~=m-width-20] {
+        width: 20px !important;
+      }
+
+      *[class~=m-width-10] {
+        width: 10px !important;
+      }
+
+      *[class~=m-width-100] {
+        width: 100% !important;
+      }
+
+      *[class~=m-width-300] {
+        width: 300px !important;
+      }
+
+      *[class~=m-width-99] {
+        width: 99px !important;
+      }
+
+      *[class~=m-width-106] {
+        width: 106px !important;
+      }
+
+      *[class~=m-width-240] {
+        width: 240px !important;
+      }
+
+      *[class~=m-width-75] {
+        width: 75px !important;
+      }
+
+      *[class~=m-width-1] {
+        width: 1px !important;
+      }
+
+      *[class~=m-width-160] {
+        width: 160px !important;
+      }
+
+      *[class~=m-width-220] {
+        width: 220px !important;
+      }
+
+      *[class~=m-width-260] {
+        width: 260px !important;
+      }
+
+      *[class~=m-nav] {
+        color: #ffffff !important;
+        background-color: #000000 !important;
+      }
+
+      *[class~=m-stack] {
+        display: block !important;
+        clear: both !important;
+        margin: 0;
+      }
+
+      *[class~=m-stack] {
+        padding-bottom: 5px !important;
+      }
+
+      *[class~=m-clear] {
+        float: none !important;
+        text-align: center !important;
+        align-content: center !important;
+      }
+
+      *[class~=m-valign-top] {
+        vertical-align: top !important;
+      }
+
+      *[class~=m-show] {
+        display: block !important;
+        font-size: inherit !important;
+        line-height: inherit !important;
+        visibility: visible !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+      }
+
+      *[class~=m-linebreak] {
+        display: block !important;
+      }
+
+      *[class~=m-cta-border] {
+        border: solid 1px #ffffff !important;
+      }
+
+      *[class~=m-height-10] {
+        font-size: 10px !important;
+        line-height: 10px !important;
+      }
+
+      *[class~=m-border-bottom] {
+        border-bottom: 1px solid #ffffff !important;
+      }
+
+      *[class~=m-button] {
+        width: 300px !important;
+        align-content: center;
+        text-align: center !important;
+      }
+
+      *[class~=m-button-288] {
+        width: 288px !important;
+        align-content: center;
+        text-align: center !important;
+      }
+
+      *[class~=m-hieght-10] {
+        font-size: 10px !important;
+        line-height: 10px !important;
+      }
+
+      *[class~=m-hieght-20] {
+        font-size: 20px !important;
+        line-height: 20px !important;
+      }
+
+      /* ----- CAROUSEL CLASSES ----- */
+    }
+
+    input {
+      display: none;
+    }
+
+    @media screen and (max-width:9999px) {
+
+      .cboxcheck:checked+* .thumb-carousel,
+      * [summary=cboxcheck]:checked+* [summary^=thumb-carousel] {
+        height: auto !important;
+        max-height: none !important;
+        line-height: 0;
+      }
+
+      .thumb-carousel span,
+      * [summary^=thumb-carousel] span {
+        font-size: 0;
+        line-height: 0;
+      }
+
+      .cboxcheck:checked+* .thumb-carousel .carousel-content,
+      * [summary=cboxcheck]:checked+* [summary^=thumb-carousel] [summary^=content] {
+        display: none;
+        max-height: 0px;
+        overflow: hidden;
+      }
+
+      .thumb-carousel .cbox1:checked+span .content-1,
+      .thumb-carousel .cbox2:checked+span .content-2,
+      .thumb-carousel .cbox3:checked+span .content-3,
+      .thumb-carousel .cbox4:checked+span .content-4,
+      .thumb-carousel .cbox5:checked+span .content-5,
+      * [summary^=thumb-carousel] [summary=cbox1]:checked+span [summary=content-1],
+      * [summary^=thumb-carousel] [summary=cbox2]:checked+span [summary=content-2],
+      * [summary^=thumb-carousel] [summary=cbox3]:checked+span [summary=content-3],
+      * [summary^=thumb-carousel] [summary=cbox4]:checked+span [summary=content-4],
+      * [summary^=thumb-carousel] [summary=cbox5]:checked+span [summary=content-5] {
+        display: block !important;
+        max-height: none !important;
+        overflow: visible !important;
+      }
+
+      .thumb-carousel .thumb,
+      * [summary^=thumb-carousel] [summary=thumb] {
+        cursor: pointer;
+        display: inline-block !important;
+        width: 22%;
+        margin: 1% 0.61%;
+        border: 2px solid #97000f;
+      }
+
+      /* hide for thunderbird as it doesn't support checkboxes */
+      .moz-text-html .thumb {
+        display: none !important;
+      }
+
+      .thumb-carousel .thumb:hover,
+      * [summary^=thumb-carousel] [summary=thumb]:hover {
+        border: 2px solid #000000;
+      }
+
+      .thumb-carousel input:checked+span>span,
+      * [summary^=thumb-carousel] [summary^=cbox]:checked+span>span {
+        border-color: #ffffff;
+      }
+
+      .thumb-carousel .thumb img,
+      * [summary^=thumb-carousel] [summary=thumb] img {
+        width: 100%;
+        height: auto;
+      }
+
+      .thumb-carousel img,
+      * [summary^=thumb-carousel] img {
+        max-height: none !important;
+      }
+
+      .cboxcheck:checked+* .fallback {
+        display: none !important;
+        display: none;
+        max-height: 0px;
+        height: 0px;
+        overflow: hidden;
+      }
+
+      * [summary="cboxcheck"]:checked+* [summary="fallback"] {
+        max-height: 0px;
+        height: 0px;
+        overflow: hidden;
+      }
+    }
+
+    @media screen and (max-width:600px) {
+
+      .carousel-table.responsive,
+      .carousel-table.responsive .thumb-carousel,
+      .carousel-table.responsive .thumb-carousel .carousel-content img,
+      .carousel-table.responsive .fallback .carousel-content img {
+        width: 100% !important;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+    <tr>
+      <td align="center">
+        <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#FFFFFF"
+          align="center">
+          <tr>
+            <td>
+              <!--preheader-->
+
+              <table width="318" border="0" cellspacing="0" cellpadding="0" align="left" style="float:left"
+                class="m-full">
+                <tr>
+                  <td width="1" class="m-width-10">&nbsp;</td>
+                  <td
+                    style=" font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; color:#000000; font-size:9px; line-height:11px;">
+                    <div style="font-size:6px; line-height:6px;">&nbsp;</div>
+                    Book by 4/5/2021 for your exclusive Carnival Premier Cruise offer
+                    <div style="font-size:6px; line-height:6px;">&nbsp;</div>
+                  </td>
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!--/preheader-->
+              <!--navbar-->
+
+              <table width="318" border="0" cellspacing="0" cellpadding="0" align="right" style="float:right"
+                class="m-full m-nav">
+                <tr>
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                  <td class="m-align-left m-nav m-width-99" align="right" width="80"
+                    style=" font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; color:#000000; font-size:10px; line-height:11px; text-transform:uppercase;">
+                    <div style="font-size:6px; line-height:6px;">&nbsp;</div>
+                    <a href="##" target="_blank" style="text-decoration:none; color:#000000" class="m-nav">My Offers</a>
+                    <div style="font-size:6px; line-height:6px;">&nbsp;</div>
+                  </td>
+                  <td class="m-center m-nav m-width-99" align="right" width="100"
+                    style=" font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; color:#000000; font-size:10px; line-height:11px; text-transform:uppercase;">
+                    <div style="font-size:6px; line-height:6px;">&nbsp;</div>
+                    <a href="##" target="_blank" style="text-decoration:none; color:#000000" class="m-nav">Premier
+                      perks</a>
+                    <div style="font-size:6px; line-height:6px;">&nbsp;</div>
+                  </td>
+                  <td class="m-nav m-width-99" width="80" align="right"
+                    style=" font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; color:#000000; font-size:10px; line-height:11px; text-transform:uppercase;">
+                    <div style="font-size:6px; line-height:6px;">&nbsp;</div>
+                    <a href="##" target="_blank" style="text-decoration:none; color:#000000" class="m-nav">my
+                      profile</a>
+                    <div style="font-size:6px; line-height:6px;">&nbsp;</div>
+                  </td>
+                  <td width="1" class="m-width-10">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!--/navbar-->
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#303030" style="font-size:8px; line-height:8px;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td bgcolor="#303030" style="font-size:8px; line-height:8px;">
+              <table width="170" border="0" cellspacing="0" cellpadding="0" align="left" style="float:left">
+                <tr>
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                  <td><a href="##" target="_blank"><img
+                                      src="images/wrapper/d724b179179d3e61ca7a4f5af820ceca.jpg"
+                        style="display:block" width="150"></a></td>
+                </tr>
+              </table>
+              <table width="92" border="0" cellspacing="0" cellpadding="0" align="right" style="float:right">
+                <tr>
+                  <td><a href="##" target="_blank"><img
+                                      src="images/wrapper/7fc4dd4d1a63aef33a2950b916fdbd29.png"
+                        style="display:block" height="44"></a></td>
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#303030" style="font-size:8px; line-height:8px;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+              <!--Tier Bar-->
+
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#555555">
+                <tr>
+                  <td style="font-size:8px; line-height:8px;">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#555555">
+                    <table width="58" border="0" cellspacing="0" cellpadding="0" align="left" style="float:left">
+                      <tr>
+                        <td width="20" class="m-width-10">&nbsp;</td>
+                        <td width="38"><img
+                                      src="images/wrapper/646c9242fc4acb73c9cf1bf22796fdd2.jpg"
+                            style="display:block"></td>
+                      </tr>
+                    </table>
+                    <table width="567" border="0" cellspacing="0" cellpadding="0" align="right" style="float:right"
+                      class="m-align-right m-width-260">
+                      <tr>
+                        <td width="517" class="m-align-right m-width-240" align="left"
+                          style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; color:#ffffff; font-weight:bold; font-size:12px; line-height:14px;">
+                          <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                          <div style="text-transform:uppercase">FIRst_name last_name</div>
+                          <div style="color:#CCCCCC; font-size:11px; line-height:13px; font-weight:normal">VIFP
+                            Club<sup>&reg;</sup> member number: PAST_GUEST_NUM</div>
+                        </td>
+                        <td width="20" class="m-width-10">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-size:8px; line-height:8px; border-bottom:solid #ffffff 1px">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!--Tier Bar-->
+
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#97000f">
+                <tr>
+                  <td>
+                    <!--primary-->
+                    <!--carousel-->
+
+                    <table class="carousel-table  responsive" cellpadding=0 cellspacing=0 border=0 width="450"
+                      align="center">
+                      <tr>
+                        <td>
+                          <!--[if !mso]><!-- -->
+                          <input type=radio class="cboxcheck" summary="cboxcheck" style="display:none !important;"
+                            checked>
+                          <!--<![endif]-->
+
+                          <div>
+                            <!--[if !mso]><!-- -->
+                            <div class="thumb-carousel " summary="thumb-carousel"
+                              style="width:450px;height:0px;max-height:0px;overflow:hidden;text-align:center">
+                              <label>
+                                <input type="radio" name="carousel-rd1" class="cbox4" summary="cbox4"
+                                  style="display:none !important;">
+                                <span>
+                                  <label>
+                                    <input type="radio" name="carousel-rd1" class="cbox3" summary="cbox3"
+                                      style="display:none !important;">
+                                    <span>
+                                      <label>
+                                        <input type="radio" name="carousel-rd1" class="cbox2" summary="cbox2"
+                                          style="display:none !important;">
+                                        <span>
+                                          <label>
+                                            <input type="radio" name="carousel-rd1" class="cbox1" summary="cbox1"
+                                              style="display:none !important;" checked>
+                                            <span>
+                                              <div class="content-1 carousel-content" summary="content-1"><a
+                                                  href="##"><img
+                                                    src="images/carousel/ship-ocean_450.jpg"
+                                                    width=450 height=340 alt="" style="display:block;max-height:0"
+                                                    border=0></a></div>
+                                              <div class="content-2 carousel-content" summary="content-2"><a
+                                                  href="##"><img
+                                                    src="images/carousel/pool-waiter_450.jpg"
+                                                    width=450 height=340 alt="" style="display:block;max-height:0"
+                                                    border=0></a></div>
+                                              <div class="content-3 carousel-content" summary="content-3"><a
+                                                  href="##"><img
+                                                    src="images/carousel/ship-crowd_450.jpg"
+                                                    width=450 height=340 alt="" style="display:block;max-height:0"
+                                                    border=0></a></div>
+                                              <div class="content-4 carousel-content" summary="content-4"><a
+                                                  href="##"><img
+                                                    src="images/carousel/beach-family_450.jpg"
+                                                    width=450 height=340 alt="" style="display:block;max-height:0"
+                                                    border=0></a></div>
+                                              <span class="thumb" summary="thumb" style="display:none;"><img
+                                                  src="images/thumbs/ship-ocean_95.jpg"
+                                                  width="50" style="display:block;max-height:0" border=0></span>
+                                            </span>
+                                          </label>
+                                          <span class="thumb" summary="thumb" style="display:none;"><img
+                                              src="images/thumbs/pool-waiter_95.jpg"
+                                              width="50" style="display:block;max-height:0" border=0></span>
+                                        </span>
+                                      </label>
+                                      <span class="thumb" summary="thumb" style="display:none;"><img
+                                          src="images/thumbs/ship-crowd_95.jpg"
+                                          width="50" style="display:block;max-height:0" border=0></span>
+                                    </span>
+                                  </label>
+                                  <span class="thumb" summary="thumb" style="display:none;"><img
+                                      src="images/thumbs/beach-family_95.jpg"
+                                      width="50" style="display:block;max-height:0" border=0></span>
+                                </span>
+                              </label>
+                            </div>
+                            <!--<![endif]-->
+                            <div class="fallback " summary="fallback">
+                              <div class="carousel-content" summary="carousel-content"><a href="##"><img
+                                    src="images/carousel/ship-ocean_450.jpg"
+                                    width=450 height=340 alt="." style="display:block;" border=0></a></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--/carousel-->
+
+                    <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#97000f">
+                      <tr>
+                        <td width="10">&nbsp;</td>
+                        <td width="620" class="m-full" align="center"
+                          style=" font-family:'Helvetica Neue', Helvetica, Arial, sans-serif">
+                          <div
+                            style="font-size:20px; line-height:22px; font-weight:bold; color:#ffffff; text-transform:uppercase ">
+                            <div style=" font-size:24px; line-height:24px;">&nbsp;</div>
+                            GET A FREE INTERIOR ROOM
+                          </div>
+                          <div style=" font-size:8px; line-height:8px;">&nbsp;</div>
+                          <div
+                            style="color:#ffffff; font-size:14px; font-weight:bold; line-height:16px; text-transform:uppercase">
+                            WHEN YOU BOOK BY 4/5/17.*</div>
+                          <div style=" font-size:24px; line-height:24px;">&nbsp;</div>
+                          <a href="##" target="_blank">
+                            <table width="200" border="0" cellspacing="0" cellpadding="0" class="m-button"
+                              bgcolor="#000000">
+                              <tr>
+                                <td><a href="##" target="_blank"><img
+                                      src="images/wrapper/0436ade6165fbda4f07e5c0ffd851cee.jpg"
+                                      style="display:inline-block; " alt="Casino-Responsive-Hero"></a></td>
+                              </tr>
+                            </table>
+                          </a>
+                        </td>
+                        <td width="10">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td colspan="3" style="font-size:18px; line-height:18px;">&nbsp;</td>
+                      </tr>
+                    </table>
+
+                    <!--/primary-->
+
+                    <!--strikethrough-->
+
+                    <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#97000f">
+                      <tr>
+                        <td class="m-width-75" width="155">&nbsp;</td>
+                        <td width="460" class="m-full"
+                          style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:16px; line-height:18px;">
+                          <!--left strike-->
+
+                          <table border="0" cellspacing="0" cellpadding="0" align="left" style="float:left"
+                            class="m-full">
+                            <tr>
+                              <td
+                                style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:17px; color:#ffffff;">
+                                Prices starting at <strong>$<s>699</s></strong>**<span
+                                  class="m-hide">&nbsp;&nbsp;|&nbsp;&nbsp;</span></td>
+                            </tr>
+                          </table>
+
+                          <!--/left strike-->
+                          <!--right strike-->
+
+                          <table border="0" cellspacing="0" cellpadding="0" align="left" style="float:left"
+                            class="m-full">
+                            <tr>
+                              <td
+                                style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:17px; color:#ffffff;">
+                                Your price starting at <strong>$439</strong>**</td>
+                            </tr>
+                          </table>
+
+                          <!--/right strike-->
+                        </td>
+                        <td class="m-width-10" width="25">&nbsp;</td>
+                      </tr>
+                    </table>
+                    <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#97000f"
+                      align="center">
+                      <tr>
+                        <td width="20" class="m-width-10">&nbsp;</td>
+                        <td align="center"
+                          style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:10px; line-height:12px; color:#FFFFFF">
+                          <div style=" font-size:12px; line-height:12px;">&nbsp;</div>
+                          You will need to provide your VIFP Club number, <strong>PAST_GUEST_NUM</strong>, and
+                          request Rate Code <strong>RATE_CODE1</strong>.[IF ADT_TIER == "TIER1" OR ADT_TIER ==
+                          "TIER2" THEN ] Any questions? Feel free to email us at <a href="mailto:email.com"
+                            target="_blank" style="color:#FFFFFF">email.com.</a>[ENDIF]
+                          <div style=" font-size:20px; line-height:20px;">&nbsp;</div>
+                        </td>
+                        <td width="20" class="m-width-10">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td colspan="3" style="font-size:2px; line-height:2px" height="2" bgcolor="#000000">&nbsp;</td>
+                      </tr>
+                    </table>
+
+                    <!--/strikethrough-->
+                  </td>
+                </tr>
+              </table>
+
+              <!--secondary-->
+
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#e0ebeb">
+                <tr>
+                  <td><img
+                                      src="images/wrapper/b8d02a8010faea9a0f4e961ab9638e76.png"
+                      style="display:block" class="m-hide">
+                    <div
+                      style=" font-size:0px; line-height:0px; overflow:hidden; visibility:hidden; display:none; max-width:0px; max-height:0px;"
+                      class="m-show"><img
+                                      src="images/wrapper/ca2e47366473e67f8bce75447e83c2ef.jpg"
+                        style="display:none" class="m-show"></div>
+                  </td>
+                </tr>
+              </table>
+
+              <!--/secondary-->
+
+              <!--sailgrid-->
+
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#e0ebeb">
+                <tr>
+                  <td width="8" class="">&nbsp;</td>
+                  <td class="m-full">
+                    <!--floatleft-->
+
+                    <table width="310" border="0" cellspacing="0" cellpadding="0" style="float:left" align="left">
+                      <tr>
+                        <td>
+                          <!--cell-->
+
+                          <table width="310" border="0" cellspacing="0" cellpadding="0" bgcolor="#e0ebeb" height="145">
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                            <tr valign="top">
+                              <td width="7">&nbsp;</td>
+                              <td width="296" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif"><img
+                                      src="images/wrapper/bff788c9f6ee0bfaeb6809de2b3ed566.jpg"
+                                  style="display:inline-block; " width="296">
+                                <div style="font-size:10px; line-height:10px;">&nbsp;</div>
+                                <div
+                                  style="text-transform:uppercase; font-weight:bold; font-size:13px; line-height:15px;">
+                                  7 DAY WESTERN CARIBBEAN</div>
+                                <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                                <div style="font-size:10px; font-weight:bold; line-height:12px;">July 30, 2021 from New
+                                  Orleans, LA<br>
+                                  Carnival Dream<sup>&reg;</sup></div>
+                              </td>
+                              <td width="7">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px; border-bottom:1px solid #FFFFFF">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                          </table>
+
+                          <!--/cell-->
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--/floatleft-->
+                    <!--floatright-->
+
+                    <table width="310" border="0" cellspacing="0" cellpadding="0" style="float:right" align="right">
+                      <tr>
+                        <td>
+                          <!--cell-->
+
+                          <table width="310" border="0" cellspacing="0" cellpadding="0" bgcolor="#e0ebeb" height="145">
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                            <tr valign="top">
+                              <td width="7">&nbsp;</td>
+                              <td width="296" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif"><img
+                                      src="images/wrapper/66673105b8ac25f18081726efc575189.jpg"
+                                  style="display:inline-block; " width="296">
+                                <div style="font-size:10px; line-height:10px;">&nbsp;</div>
+                                <div
+                                  style="text-transform:uppercase; font-weight:bold; font-size:13px; line-height:15px;">
+                                  7 DAY EASTERN CARIBBEAN</div>
+                                <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                                <div style="font-size:10px; font-weight:bold; line-height:12px;">September 16, 2021 from
+                                  Miami, FL<br>
+                                  Carnival Glory<sup>&reg;</sup></div>
+                              </td>
+                              <td width="7">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px; border-bottom:1px solid #FFFFFF">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                          </table>
+
+                          <!--/cell-->
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--/floatright-->
+                  </td>
+                  <td width="8">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!--sailgrid-->
+              <!--sailgrid-->
+
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#e0ebeb">
+                <tr>
+                  <td width="8" class="">&nbsp;</td>
+                  <td class="m-full">
+                    <!--floatleft-->
+
+                    <table width="310" border="0" cellspacing="0" cellpadding="0" style="float:left" align="left">
+                      <tr>
+                        <td>
+                          <!--cell-->
+
+                          <table width="310" border="0" cellspacing="0" cellpadding="0" bgcolor="#e0ebeb" height="145">
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                            <tr valign="top">
+                              <td width="7">&nbsp;</td>
+                              <td width="296" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif"><img
+                                      src="images/wrapper/cb5b7c011c69e744e32cdd47cdc04894.jpg"
+                                  style="display:inline-block; " width="296">
+                                <div style="font-size:10px; line-height:10px;">&nbsp;</div>
+                                <div
+                                  style="text-transform:uppercase; font-weight:bold; font-size:13px; line-height:15px;">
+                                  7 DAY EASTERN CARIBBEAN</div>
+                                <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                                <div style="font-size:10px; font-weight:bold; line-height:12px;">August 13, 2021 from
+                                  Baltimore, MD<br>
+                                  Carnival Pride<sup>&reg;</sup></div>
+                              </td>
+                              <td width="7">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px; border-bottom:1px solid #FFFFFF">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                          </table>
+
+                          <!--/cell-->
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--/floatleft-->
+                    <!--floatright-->
+
+                    <table width="310" border="0" cellspacing="0" cellpadding="0" style="float:right" align="right">
+                      <tr>
+                        <td>
+                          <!--cell-->
+
+                          <table width="310" border="0" cellspacing="0" cellpadding="0" bgcolor="#e0ebeb" height="145">
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                            <tr valign="top">
+                              <td width="7">&nbsp;</td>
+                              <td width="296" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif"><img
+                                      src="images/wrapper/b0cde2e55f7ae98b8d8e2b8fe2d60d18.jpg"
+                                  style="display:inline-block; " width="296">
+                                <div style="font-size:10px; line-height:10px;">&nbsp;</div>
+                                <div
+                                  style="text-transform:uppercase; font-weight:bold; font-size:13px; line-height:15px;">
+                                  7 DAY EASTERN CARIBBEAN</div>
+                                <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                                <div style="font-size:10px; font-weight:bold; line-height:12px;">August 27, 2021 from
+                                  Fort Lauderdale, FL<br>
+                                  Carnival Splendor<sup>&reg;</sup></div>
+                              </td>
+                              <td width="7">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px; border-bottom:1px solid #FFFFFF">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                          </table>
+
+                          <!--/cell-->
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--/floatright-->
+                  </td>
+                  <td width="8">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!--sailgrid-->
+
+              <!--sailgrid-->
+
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#e0ebeb">
+                <tr>
+                  <td width="8" class="">&nbsp;</td>
+                  <td class="m-full">
+                    <!--floatleft-->
+
+                    <table width="310" border="0" cellspacing="0" cellpadding="0" style="float:left" align="left">
+                      <tr>
+                        <td>
+                          <!--cell-->
+
+                          <table width="310" border="0" cellspacing="0" cellpadding="0" bgcolor="#e0ebeb" height="145">
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                            <tr valign="top">
+                              <td width="7">&nbsp;</td>
+                              <td width="296" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif"><img
+                                      src="images/wrapper/e1da71abb5652f658f7f3cf2c2f5901c.jpg"
+                                  style="display:inline-block; " width="296">
+                                <div style="font-size:10px; line-height:10px;">&nbsp;</div>
+                                <div
+                                  style="text-transform:uppercase; font-weight:bold; font-size:13px; line-height:15px;">
+                                  7 DAY EASTERN CARIBBEAN</div>
+                                <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                                <div style="font-size:10px; font-weight:bold; line-height:12px;">September 10, 2021 from
+                                  Baltimore, MD<br>
+                                  Carnival Pride<sup>&reg;</sup></div>
+                              </td>
+                              <td width="7">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px; border-bottom:1px solid #FFFFFF">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                          </table>
+
+                          <!--/cell-->
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--/floatleft-->
+                    <!--floatright-->
+
+                    <table width="310" border="0" cellspacing="0" cellpadding="0" style="float:right" align="right">
+                      <tr>
+                        <td>
+                          <!--cell-->
+
+                          <table width="310" border="0" cellspacing="0" cellpadding="0" bgcolor="#e0ebeb" height="145">
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                            <tr valign="top">
+                              <td width="7">&nbsp;</td>
+                              <td width="296" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif"><img
+                                      src="images/wrapper/4e8edde8b3eedceb73a6fcb46bde302c.jpg"
+                                  style="display:inline-block; " width="296">
+                                <div style="font-size:10px; line-height:10px;">&nbsp;</div>
+                                <div
+                                  style="text-transform:uppercase; font-weight:bold; font-size:13px; line-height:15px;">
+                                  7 DAY CANADA &amp; NEW ENGLAND</div>
+                                <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                                <div style="font-size:10px; font-weight:bold; line-height:12px;">September 2, 2021 from
+                                  New York, NY<br>
+                                  Carnival Sunshine<sup>&reg;</sup></div>
+                              </td>
+                              <td width="7">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px; border-bottom:1px solid #FFFFFF">&nbsp;</td>
+                              <td style="font-size:10px; line-height:10px;">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                            </tr>
+                          </table>
+
+                          <!--/cell-->
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!--/floatright-->
+                  </td>
+                  <td width="8">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!--sailgrid-->
+
+              <!--/sailgrid-->
+
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#e0ebeb">
+                <tr>
+                  <td width="640" class="m-width-320" align="center"
+                    style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; text-transform:uppercase; font-size:12px; line-height:14px; font-weight:bold">
+                    <div style="font-size:12px; line-height:12px">&nbsp;</div>
+                    CHECK OUT THESE CARNIVAL PREMIER CRUISES AND MORE!
+                    <div style="font-size:12px; line-height:12px">&nbsp;</div>
+                    <a href="##" target="_blank">
+                      <table width="200" border="0" cellspacing="0" cellpadding="0" class="m-button" bgcolor="#dc1125">
+                        <tr>
+                          <td><a href="##" target="_blank"><img
+                                      src="images/wrapper/b06293f36ee2b97889d9ce5fd90babbc.jpg"
+                                style="display:inline-block; "></a></td>
+                        </tr>
+                      </table>
+                    </a>
+                    <div style="font-size:20px; line-height:20px;">&nbsp;</div>
+                  </td>
+                </tr>
+              </table>
+
+              <!--tertiary-->
+
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320">
+                <tr>
+                  <td width="30" class="m-width-20">&nbsp;</td>
+                  <td style="font-family: Helvetica, Arial, sans-serif; border-bottom:#dddddd 1px solid" align="center">
+                    <img
+                                      src="images/wrapper/02fc3ce09f0018e0d20c2d3c1d643968.png"
+                      style="display:inline-block" class="m-hide">
+                    <div
+                      style=" font-size:0px; line-height:0px; overflow:hidden; visibility:hidden; display:none; max-width:0px; max-height:0px;"
+                      class="m-show"><img
+                                      src="images/wrapper/8b1a517adc1104c276e28aeda5d26475.png"
+                        style="display:none" class="m-show"></div>
+                    <div style="font-size:18px; line-height:20px; color:#dc1125; font-weight:bold">GET READY FOR OUR
+                      BIGGEST<br>
+                      SLOT TOURNAMENT AT SEA</div>
+                    <div style="font-size:13px; line-height:15px; color:#000000; ">We're giving away a free room &amp; a
+                      seat in our 2021 $200,000 slot tournament on each of these Premier Sailings! Don't miss your
+                      chance to be a part of Carnival's largest slot tournament happening at the end of the year.<sup
+                        style="font-size: 60%; line-height: 0; position: relative; vertical-align: super;">&dagger;</sup>
+                    </div>
+                    <div style="font-size:12px; line-height:12px;  ">&nbsp;</div>
+                  </td>
+                  <td width="30" class="m-width-20">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!--/tertiary-->
+
+              <!--tertiary2-->
+
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320">
+                <tr>
+                  <td align="center"><img
+                                      src="images/wrapper/08924fd79257ec548ca1e72410791bb3.jpg"
+                      style="display:block" class="m-hide">
+                    <div
+                      style=" font-size:0px; line-height:0px; overflow:hidden; visibility:hidden; display:none; max-width:0px; max-height:0px;"
+                      class="m-show"><img
+                                      src="images/wrapper/5868db3b6042bb46fb5a4b625a6644f7.jpg"
+                        style="display:none" class="m-show"></div>
+                    <div style="font-size:20px; line-height:20px;">&nbsp;</div>
+                  </td>
+                </tr>
+              </table>
+
+              <!--/tertiary2-->
+
+              <!--cta -->
+
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td bgcolor="#000000" style="border-bottom:1px #ffffff solid" class="m-cta-border">
+                    <table width="212" border="0" cellspacing="0" cellpadding="0" class="m-width-318" align="left"
+                      style="float:left" height="73">
+                      <tr>
+                        <td height="73" class="m-width-320" width="212" bgcolor="#000000"
+                          style="border-left:solid #ffffff 1px; border-right:solid #ffffff 1px; color:#FFFFFF; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; line-height:13px;  text-transform:uppercase"
+                          align="center" valign="top">
+                          <div style="font-size:25px; line-height:25px">&nbsp;</div>
+                          <table width="66" border="0" cellspacing="0" cellpadding="0" align="left" style="float:left"
+                            class="m-full m-clear m-valign-top">
+                            <tr>
+                              <td align="right" class="m-clear" valign="middle"><a href="##" target="_blank"><img
+                                      src="images/wrapper/77e36eb69df9a98ad9e7a5b1f179dbd9.jpg"
+                                    style="display:inline-block; " class="m-padding-bottom-5"></a></td>
+                            </tr>
+                          </table>
+                          <table width="134" border="0" cellspacing="0" cellpadding="0" align="right"
+                            style="float:right" class="m-full m-clear m-valign-top">
+                            <tr>
+                              <td valign="top" align="left" class="m-clear"
+                                style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; line-height:13px; text-transform:uppercase">
+                                <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                                <a href="##" target="_blank" style="text-decoration:none; color:#FFFFFF">book online</a>
+                              </td>
+                            </tr>
+                          </table>
+                          <div style="font-size:20px; line-height:20px">&nbsp;</div>
+                        </td>
+                      </tr>
+                    </table>
+                    <table width="426" border="0" cellspacing="0" cellpadding="0" class="m-width-318" align="right"
+                      style="float:right" height="73">
+                      <tr>
+                        <td height="73" width="213" bgcolor="#000000"
+                          style="border-right:solid #ffffff 1px; color:#FFFFFF; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; line-height:13px;  text-transform:uppercase"
+                          align="center" valign="top" class="m-cta-border">
+                          <div style="font-size:25px; line-height:25px">&nbsp;</div>
+                          <table width="40" border="0" cellspacing="0" cellpadding="0" align="left" style="float:left"
+                            class="m-full m-clear m-valign-top">
+                            <tr>
+                              <td align="right" class="m-clear"><img
+                                      src="images/wrapper/144deca846f5273e20bfedd01bb3a718.jpg"
+                                  style="display:inline-block; " class="m-padding-bottom-5"></td>
+                            </tr>
+                          </table>
+                          <table width="160" border="0" cellspacing="0" cellpadding="0" align="right"
+                            style="float:right" class="m-full m-clear m-valign-top">
+                            <tr>
+                              <td align="left" class="m-clear"
+                                style="font-size:11px; line-height:13px; text-transform:uppercase">
+                                <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                                <a href="http://creative.lacek.net:80/test2/A/ccl-coda-demo/carousel/#"
+                                  style="color:#FFFFFF; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; line-height:13px; text-transform:uppercase; pointer-events: none; text-decoration:none;">
+                                  CALL US AT 1-866-123-4567</a>
+                              </td>
+                            </tr>
+                          </table>
+                          <div style="font-size:20px; line-height:20px">&nbsp;</div>
+                        </td>
+                        <td width="212" bgcolor="#000000"
+                          style="border-right:solid #ffffff 1px; color:#FFFFFF; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; line-height:19px;  text-transform:uppercase"
+                          align="center" valign="top" class="m-cta-border">
+                          <div style="font-size:25px; line-height:25px">&nbsp;</div>
+                          <table width="45" border="0" cellspacing="0" cellpadding="0" align="left" style="float:left"
+                            class="m-full m-clear m-valign-top">
+                            <tr>
+                              <td align="right" class="m-clear"><a
+                                  href="https://##/request-forms/find-a-travel-professional.aspx" target="_blank"><img
+                                      src="images/wrapper/5fcfe436f68f65a20a183791b694a66f.jpg"
+                                    style="display:inline-block; " class="m-padding-bottom-5"></a></td>
+                            </tr>
+                          </table>
+                          <table width="163" border="0" cellspacing="0" cellpadding="0" align="right"
+                            style="float:right" class="m-full m-clear m-valign-top">
+                            <tr>
+                              <td align="left" class="m-clear"
+                                style="font-size:11px; line-height:13px; text-transform:uppercase">
+                                <div style="font-size:4px; line-height:4px;">&nbsp;</div>
+                                <a href="https://##/request-forms/find-a-travel-professional.aspx" target="_blank"
+                                  style="text-decoration:none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; line-height:13px; text-transform:uppercase; color:#FFFFFF">CONTACT
+                                  A TRAVEL AGENT</a>
+                              </td>
+                            </tr>
+                          </table>
+                          <div style="font-size:20px; line-height:20px">&nbsp;</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!--/cta -->
+
+              <!--social-->
+
+              <!--social-->
+
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#555555">
+                <tr>
+                  <td width="640" class="m-width-320" style="font-size:12px; line-height:12px;">&nbsp;</td>
+                </tr>
+              </table>
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#555555">
+                <tr>
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                  <td width="36" align="left" valign="top"><img
+                                      src="images/wrapper/daeea04f35f4b58318cc4710819e792f.jpg"
+                      style="display:inline-block"></td>
+                  <td width="480" class="m-width-160"
+                    style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; color:#ffffff; font-size:11px; line-height:13px;"
+                    valign="top">&nbsp;</td>
+                  <td width="28" align="center"><a href="https://www.facebook.com/Carnival" target="_blank"><img
+                                      src="images/wrapper/89e1d61270134570509e7ae5845daa7a.jpg"
+                        style="display:inline-block"></a></td>
+                  <td width="28" align="center"><a href="https://twitter.com/carnivalcruise" target="_blank"><img
+                                      src="images/wrapper/4f85764c4ccde52d18ec732078e8b955.jpg"
+                        style="display:inline-block"></a></td>
+                  <td width="28" align="center"><a href="https://www.instagram.com/carnival" target="_blank"><img
+                                      src="images/wrapper/c48cbe811e087b6ab92d7fbf015f5fae.jpg"
+                        style="display:inline-block"></a></td>
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                </tr>
+              </table>
+              <table width="640" border="0" cellspacing="0" cellpadding="0" class="m-width-320" bgcolor="#555555">
+                <tr>
+                  <td width="640" class="m-width-320" style="font-size:12px; line-height:12px;">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!--/social-->
+
+              <!--footer-->
+
+              <table border="0" cellpadding="0" cellspacing="0" width='640' class="m-width-320">
+                <tr align="left">
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                  <td valign="bottom" align="left"
+                    style="font-family:Helvetica,Arial,sans-serif;color:#000000;font-size:10px;line-height:13px"><br>
+                    <br>
+                    Ships' Registry: The Bahamas, Panama and Malta.<br />
+                    <br>
+                    *<a href="##" style="color:#000000; text-decoration:underline;">Click here</a> for full offer terms
+                    and
+                    conditions.<br />
+                    <br />
+                    [IF VAR_07 == 'STP_PP_CPC_0217' THEN ][ELSE]**Average starting price per guest in U.S.
+                    dollars. Based on double occupancy and accurate as of time of mailing.<br />
+                    <br />
+                    [ENDIF] <sup>&dagger;</sup>Maximum of one seat in our 2021 $200,000 slot tournament seat will be
+                    awarded per each cruise through September 30, 2021. Slot tournament to award total prize amount of
+                    $200,000 cash. Cash prize denominations to be awarded at Carnival's discretion. Carnival reserves
+                    the right to change or cancel this promotion at any time.<br />
+                    <br />
+                    [ENDIF] [IF AUX_08 == 'TC_18_CPC' THEN ] Guests under the age of 21 MUST travel with a
+                    relative or guardian who is 25 years of age or older (who does not need to be a legal guardian). For
+                    full details and restrictions, go to <a href="##" style="color:#000000; text-decoration:underline"
+                      target="_blank">carnival.com/minor-policy</a>.<br />
+                    <br />
+                    [ENDIF]
+
+                    Guarantee our messages always go straight to your inbox. Add <a href="##mailto:##.com"
+                      style="color:#000000; text-decoration:underline"
+                      target="_blank">funships@carnivalcruiselineemail.com</a> to your Address Book or Safe List.<br />
+                    <br />
+                    <a href="##" style="color:#000000; text-decoration:underline" target="_blank">Unsubscribe</a> from
+                    our mailing
+                    list or send a request by mail to Carnival Cruise Line: <a href="##"
+                      style="color:#000000; pointer-events: none; text-decoration:none">Carnival Place, 3655 NW 87th
+                      Avenue, Miami, FL 33178-2428</a>. Attn: Interactive Marketing<br />
+                    <br /></td>
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                  <td align="right"
+                    style="font-family:Helvetica,Arial,sans-serif;color:#000000;font-size:10px;line-height:13px"><a
+                      target="_blank" style="color:#000000; text-decoration:underline" href="##">Help</a>&nbsp; <a
+                      target="_blank" style="color:#000000; text-decoration:underline" href="##">Privacy</a>&nbsp;
+                    <a target="_blank" style="color:#000000; text-decoration:underline" href="##">About
+                      Carnival</a><br />
+                    <div style='font-size:17px; line-height:17px;'>&nbsp;</div>
+                  </td>
+                  <td width="20" class="m-width-10">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3"><span style="color:#ffffff; font-size:0px; overflow:hidden">Member_Busname
+                      Member_Addr
+                      Member_City, Member_State, Member_PostalCode, Member_Country</span>
+                    <custom name="opencounter" type="tracking" />
+                  </td>
+                </tr>
+              </table>
+
+              <!--/footer-->
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
