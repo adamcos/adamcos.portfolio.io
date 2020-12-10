@@ -318,11 +318,6 @@
                 position: relative;
             }
 
-            /* 
-  Selective blocking for clients.
-  - Samsung (#MessageViewBody) - no absolute positioning
-  - Comcast/Zimbra (body.MsgBody) - inconsistent CSS support
-  */
             #MessageViewBody .fallback,
             body.MsgBody .fallback {
                 display: block;
@@ -349,7 +344,7 @@
                 width: 100% !important;
             }
 
-            .carousel.responsive .carousel-cont {
+            .carousel.responsive .car-cont {
                 width: 100% !important;
                 height: auto !important;
             }
@@ -360,7 +355,7 @@
                 top: 0px;
                 left: 0px;
                 opacity: 0;
-                -webkit-animation: carousel-anim 10s linear infinite;
+                -webkit-animation: car-anim 9s linear infinite;
             }
 
             .carousel.fade a:nth-child(1) {
@@ -375,12 +370,10 @@
             .carousel.fade a:nth-child(3) {
                 -webkit-animation-delay: -4s;
             }
-			 
-			 .carousel.fade a:nth-child(4) {
-                -webkit-animation-delay: 4s;
-            }
 
-            @-webkit-keyframes carousel-anim {
+
+
+            @-webkit-keyframes car-anim {
 
                 /* start fade in */
                 0% {
@@ -418,30 +411,28 @@
                 }
             }
 
+
             /* EFFECTS */
             .carousel.effects img {
                 -webkit-animation-name: effect-zoomin;
-                -webkit-animation-duration: 40s;
+                -webkit-animation-duration: 9s;
                 -webkit-animation-timing-function: linear;
                 -webkit-animation-iteration-count: infinite;
             }
 
             .carousel.effects a:nth-child(1) img {
-                -webkit-animation-delay: -30s;
+                -webkit-animation-delay: -10s;
             }
 
             .carousel.effects a:nth-child(2) img {
-                -webkit-animation-delay: -20s;
+                -webkit-animation-delay: -7s;
             }
 
             .carousel.effects a:nth-child(3) img {
-                -webkit-animation-delay: -10s;
+                -webkit-animation-delay: -4s;
             }
-			
-			.carousel.effects a:nth-child(4) img {
-                -webkit-animation-delay: -0s;
-            }
-			
+
+
 
             .carousel.effects img.zoom-in {
                 -webkit-animation-name: effect-zoomin;
@@ -464,12 +455,12 @@
                     -webkit-transform: scale(1);
                 }
 
-                33% {
-                    -webkit-transform: scale(1.4);
+                33.33% {
+                    -webkit-transform: scale(1.2);
                 }
 
                 38% {
-                    -webkit-transform: scale(1.4);
+                    -webkit-transform: scale(1.2);
                 }
 
                 100% {
@@ -479,67 +470,63 @@
 
             @-webkit-keyframes effect-zoomout {
                 0% {
-                    -webkit-transform: scale(1.55);
-                    margin-left: 20%;
+                    -webkit-transform: scale(1.2);
                 }
 
-                33% {
+                33.33% {
                     -webkit-transform: scale(1);
-                    margin-left: 0%;
                 }
 
                 38% {
                     -webkit-transform: scale(1);
-                    margin-left: 0%;
                 }
 
                 100% {
-                    -webkit-transform: scale(1.55);
-                    margin-left: 20%;
+                    -webkit-transform: scale(1.2);
                 }
             }
 
             @-webkit-keyframes effect-panright {
                 0% {
-                    -webkit-transform: scale(1.5);
-                    margin-left: -50%;
+                    -webkit-transform: scale(1.2);
+                    margin-left: -10%;
                 }
 
                 33.33% {
-                    -webkit-transform: scale(1);
-                    margin-left: 0%;
+                    -webkit-transform: scale(1.2);
+                    margin-left: 10%;
                 }
 
                 38% {
-                    -webkit-transform: scale(1);
-                    margin-left: 0%;
+                    -webkit-transform: scale(1.2);
+                    margin-left: 10%;
                 }
 
                 100% {
-                    -webkit-transform: scale(1.5);
-                    margin-left: -50%;
+                    -webkit-transform: scale(1.2);
+                    margin-left: -10%;
                 }
             }
 
             @-webkit-keyframes effect-panleft {
                 0% {
-                    -webkit-transform: scale(1.5);
-                    margin-left: 50%;
+                    -webkit-transform: scale(1.2);
+                    margin-left: 10%;
                 }
 
                 33.33% {
-                    -webkit-transform: scale(1);
-                    margin-left: 0%;
+                    -webkit-transform: scale(1.2);
+                    margin-left: -10%;
                 }
 
                 38% {
-                    -webkit-transform: scale(1);
-                    margin-left: 0%;
+                    -webkit-transform: scale(1.2);
+                    margin-left: -10%;
                 }
 
                 100% {
-                    -webkit-transform: scale(1.5);
-                    margin-left: 50%;
+                    -webkit-transform: scale(1.2);
+                    margin-left: 10%;
                 }
             }
         }
@@ -587,14 +574,15 @@
                             <table width="610" border="0" cellspacing="0" cellpadding="0" class="m-full">
                                 <tr>
                                     <td width="17" style="background-color:#ffffff; font-size:1px; line-height:1px;">
-                                        <img src="images/wrapper/left-corner.jpg"
-                                            width="17" height="17" style="display:block; border:0;" class="corner" />
+                                        <img src="images/wrapper/left-corner.jpg" width="17" height="17"
+                                            style="display:block; border:0;" class="corner" />
                                     </td>
-                                    <td style="font-size:1px; line-height:1px; background-color:#ffffff; width:100%">&nbsp;
-                                        </td>
+                                    <td style="font-size:1px; line-height:1px; background-color:#ffffff; width:100%">
+                                        &nbsp;
+                                    </td>
                                     <td width="17" style="background-color:#ffffff; font-size:1px; line-height:1px;">
-                                        <img src="images/wrapper/right-corner.jpg"
-                                            width="17" height="17" style="display:block; border:0;" class="corner" />
+                                        <img src="images/wrapper/right-corner.jpg" width="17" height="17"
+                                            style="display:block; border:0;" class="corner" />
                                     </td>
                                 </tr>
                             </table>
@@ -699,8 +687,7 @@
                                     <td width="18" class="m-hide">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td align="right"><img
-                                            src="images/wrapper/f247d8d3c32692be28da0f8fcdd196a4.gif"
+                                    <td align="right"><img src="images/wrapper/f247d8d3c32692be28da0f8fcdd196a4.gif"
                                             width="63" height="57" alt="VIFP" style="display:block; border:0;" /></td>
                                     <td width="18" class="m-width-10">&nbsp;</td>
                                 </tr>
@@ -722,8 +709,8 @@
                                 style="background-color:#ffffff;" class="m-full">
                                 <tr>
                                     <td align="center" valign="top" style="line-height:1px; height:13px;"><img
-                                            src="images/wrapper/banner-shadow.png"
-                                            style="display:block; border:0;" width="100%" height="13" alt="" /></td>
+                                            src="images/wrapper/banner-shadow.png" style="display:block; border:0;"
+                                            width="100%" height="13" alt="" /></td>
                                 </tr>
                             </table>
                         </td>
@@ -750,148 +737,262 @@
 
                 <!-- animated slideshow -->
                 <!--[if !mso]><!-- -->
-                <table width="610" border="0" cellspacing="0" cellpadding="0" class="m-full">
+                <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td>
-                            <table width="610" border="0" cellspacing="0" cellpadding="0"
-                                style="background-color:#ffffff;" class="m-full">
+                        <td width="600" style="background-color:#ffffff">
+                            <!-- content -->
+                            <!-- animated carousel -->
+                            <!--[if !mso]><!-- -->
+                            <div class="carousel fade responsive effects"
+                                style="overflow:hidden;display:none;max-height:0px;">
+                                <div class="car-cont" style="position:relative;width:610px;height:405px;">
+                                    <a href="##"><img class="zoom-out" src="images/slideshow/ship-mountain.jpg"
+                                            border="0"></a>
+                                    <a href="##"><img class="pan-left" src="images/slideshow/ship-ocean.jpg"
+                                            border="0"></a>
+                                    <a href="##"><img class="pan-right" src="images/slideshow/ships-dock.jpg"
+                                            border="0"></a>
+                                </div>
+                            </div>
+                            <!--<![endif]-->
+
+
+
+                            <!-- static fallback content -->
+                            <div class="fallback">
+                                <a href="##"><img src="images/slideshow/ship-mountain.jpg" height="405" width="610"
+                                        style="display:block;" border="0"></a>
+                            </div>
+
+
+                            <!-- /content -->
+
+                        </td>
+                    </tr>
+                </table>
+                <!--[endif]-->
+
+                <!-- static fallback content -->
+
+                <div class="fallback"> <a href="http://www.carnival.com/"><img
+                            src="images/slideshow/beach-swing_1000.jpg" height="407" width="610" style="display:block;"
+                            border="0"></a> </div>
+                <div style="font-size:20px; line-height:20px; background-color:#ffffff;">&nbsp;</div>
+                <table width="610" border="0" cellspacing="0" cellpadding="0" class="wrapper"
+                    style="background-color:#ffffff">
+                    <tr>
+                        <td width="25" class="m-width-15">&nbsp;</td>
+                        <td align="center">
+                            <table class="right m-full" align="right" cellspacing="0" border="0" bgcolor="#cfe4f1"
+                                width="33%">
                                 <tr>
-                                    <td align="center">
-                                        <div class="carousel fade responsive effects"
-                                            style="overflow:hidden;display:none;max-height:0px;">
-                                            <div class="carousel-cont"
-                                                style="position:relative;width:610px;height:400px;">
-                                                <a href="http://www.carnival.com/"><img class="pan-right" src="images/slideshow/ship-mountain_1000.jpg" border="0"></a>
-                                               <!--<a href="http://www.carnival.com/"><img class="zoom-in"src="images/slideshow/beach-family_1000.jpg" border="0"></a>
-                                                <a href="http://www.carnival.com/"><img class="pan-left" src="images/slideshow/ship-overhead_1000.jpg"border="0"></a>
-                                                <a href="http://www.carnival.com/"><img class="zoom-in" src="images/slideshow/pool-waiter_1000.jpg" border="0"></a>
-												<a href="http://www.carnival.com/"><img class="effect-panleft" src="images/slideshow/ship-crowd_1000.jpg" border="0"></a>-->
-                                            </div>
-                                        </div>
+                                    <td class="content" style="padding:16px 8px 12px 8px" align="center">
+                                        <div
+                                            style="font-family:Helvetica, Arial, sans-serif; font-size:18px; text-align:center; color: #dc1125; font-weight:bold">
+                                            Upgrade your Suite from<br>
+                                            <span style="font-size:45px;">$200</span> </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="font-size:12px; line-height:12px; display:none;" class="m-show">&nbsp;</div>
+                            <table class="m-full" align="left" cellspacing="0" border="0" bgcolor="#FFFFFF" width="64%">
+                                <tr>
+                                    <td class="content"><span
+                                            style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:25px; color:#10559a; font-weight:bold">Check
+                                            out our newest fleet addition! &mdash; get more comfortable! <br />Your
+                                            upgrade
+                                            includes:</span>
+                                        <div style="font-size:6px; line-height:6px;">&nbsp;</div>
+                                        <table class="ul" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="12" valign="top">
+                                                    <div class="bullet"
+                                                        style="font-size:14px; text-align:center; color: #10559a; font-weight:bold">
+                                                        &bull;</div>
+                                                </td>
+                                                <td>
+                                                    <div class="li"
+                                                        style="font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:18px; font-weight:bold; color: #10559a">
+                                                        VIP check-in </div>
+                                                    <div class="li-margin-bottom"
+                                                        style="font-size:6px; line-height: 6px;">&nbsp;</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="12" valign="top">
+                                                    <div class="bullet"
+                                                        style="font-size:14px; text-align:center; color: #10559a; font-weight:bold">
+                                                        &bull;</div>
+                                                </td>
+                                                <td>
+                                                    <div class="li"
+                                                        style="font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:18px; font-weight:bold; color: #10559a">
+                                                        Priority embarkation and debarkation </div>
+                                                    <div class="li-margin-bottom"
+                                                        style="font-size:6px; line-height: 6px;">&nbsp;</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="12" valign="top">
+                                                    <div class="bullet"
+                                                        style="font-size:14px; text-align:center; color: #10559a; font-weight:bold">
+                                                        &bull;</div>
+                                                </td>
+                                                <td>
+                                                    <div class="li"
+                                                        style="font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:18px; font-weight:bold; color: #10559a">
+                                                        One of our most spacious rooms, complete with a whirlpool tub
+                                                    </div>
+                                                    <div class="li-margin-bottom"
+                                                        style="font-size:6px; line-height: 6px;">&nbsp;</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div style="font-size:14px; line-height:14px;">&nbsp;</div>
+                                        <a class="image_fix"
+                                            href="https://secure.carnival.com/BookedGuest/Offers/UpgradeOfferBooking"
+                                            style="text-decoration:none;"><img class="image-fix" style="border:none;"
+                                                src="images/wrapper/7d70bdffad28726011853deaf249c11d.gif" alt=""
+                                                width="139"></a>
+                                        <div style="font-size:20x; line-height:20px;">&nbsp;</div>
                                     </td>
                                 </tr>
                             </table>
                         </td>
+                        <td width="25" class="m-width-15">&nbsp;</td>
                     </tr>
                 </table>
-                <![endif]--> 
-      
-      <!-- static fallback content -->
-      
-      <div class="fallback"> <a href="http://www.carnival.com/" ><img src="images/slideshow/beach-swing_1000.jpg" height="407" width="610" style="display:block;" border="0"></a> </div>
-      <div style="font-size:20px; line-height:20px; background-color:#ffffff;">&nbsp;</div>
-      <table width="610" border="0" cellspacing="0" cellpadding="0" class="wrapper" style="background-color:#ffffff">
-        <tr>
-          <td width="25" class="m-width-15">&nbsp;</td>
-          <td align="center"><table class="right m-full" align="right" cellspacing="0" border="0" bgcolor="#cfe4f1" width="33%">
-              <tr>
-                <td class="content" style="padding:16px 8px 12px 8px" align="center"><div style="font-family:Helvetica, Arial, sans-serif; font-size:18px; text-align:center; color: #dc1125; font-weight:bold"> Upgrade your Suite from<br>
-                    <span style="font-size:45px;">$200</span> </div></td>
-              </tr>
-            </table>
-            <div style="font-size:12px; line-height:12px; display:none;" class="m-show">&nbsp;</div>
-            <table class="m-full" align="left" cellspacing="0" border="0" bgcolor="#FFFFFF" width="64%">
-              <tr>
-                <td class="content"><span style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:25px; color:#10559a; font-weight:bold">It's family vacation time &mdash; get more comfortable! Your upgrade includes:</span>
-                  <div style="font-size:6px; line-height:6px;">&nbsp;</div>
-                  <table class="ul" cellpadding="0" cellspacing="0" border="0">
+                <img class="m-full" src="images/slideshow/ship-ocean.jpg" alt="fallback" width="610"
+                    style="display:block;">
+                <table width="610" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="m-full"
+                    style="height:80px;">
                     <tr>
-                      <td width="12" valign="top"><div class="bullet" style="font-size:14px; text-align:center; color: #10559a; font-weight:bold">&bull;</div></td>
-                      <td><div class="li" style="font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:18px; font-weight:bold; color: #10559a"> VIP check-in </div>
-                        <div class="li-margin-bottom" style="font-size:6px; line-height: 6px;">&nbsp;</div></td>
+                        <td>
+                            <table class="m-full" align="left" border="0" cellspacing="0" cellpadding="0" width="48%">
+                                <tr>
+                                    <td align="right" class="m-center">
+                                        <div style="font-size:17px; line-height:17px;" class="m-height-18">&nbsp;</div>
+                                        <img src="images/wrapper/7918ddbbf71d2554602bf95a3109c93e.gif"
+                                            alt="Lets get social" style="display:inline-block" border="0"
+                                            class="m-center" width="162" />
+                                        <div style="font-size:11px; line-height:11px;">&nbsp;</div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- /left -->
+
+                            <div style="font-size:12px; line-height:12px;" class="m-hide">&nbsp;</div>
+                            <table class="m-full" align="right" border="0" cellspacing="0" cellpadding="0" width="48%">
+                                <tr>
+                                    <td align="left">
+                                        <table width="156" border="0" cellspacing="0" cellpadding="0" class="m-center">
+                                            <tr>
+                                                <td width="30"><a href="https://www.facebook.com/Carnival"
+                                                        target="_blank"
+                                                        style="display:block; float: none; text-align: center;"><img
+                                                            src="images/wrapper/aa18c739fef2fda9c33e3ab43601f8d6.gif"
+                                                            alt="Facebook icon" style="display:inline-block" border="0"
+                                                            class="m-center" width="30" /></a></td>
+                                                <td width="11">&nbsp;</td>
+                                                <td width="30"><a href="https://twitter.com/CarnivalCruise"
+                                                        target="_blank"
+                                                        style="display:block; float: none; text-align: center;"><img
+                                                            src="images/wrapper/d4558bd85755f8b7ffcc1c589e37e23d.gif"
+                                                            alt="Twitter icon" style="display:inline-block" border="0"
+                                                            class="m-center" width="30" /></a></td>
+                                                <td width="11">&nbsp;</td>
+                                                <td width="30"><a href="https://www.instagram.com/carnival"
+                                                        target="_blank"
+                                                        style="display:block; float: none; text-align: center;"><img
+                                                            src="images/wrapper/4749398960a56bb21d80f8014f06e3c6.gif"
+                                                            alt="Instagram icon" style="display:inline-block" border="0"
+                                                            class="m-center" width="30" /></a></td>
+                                                <td width="11">&nbsp;</td>
+                                                <td width="30"><a href="https://www.youtube.com/user/Carnival"
+                                                        target="_blank"
+                                                        style="display:block; float: none; text-align: center;"><img
+                                                            src="images/wrapper/feccdf7e16b6241d08e4207844281876.gif"
+                                                            alt="YouTube icon" style="display:inline-block" border="0"
+                                                            class="m-center" width="30" /></a></td>
+                                            </tr>
+                                        </table>
+                                        <div style="font-size:11px; line-height:11px;" class="m-height-18">&nbsp;</div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- /right -->
+                        </td>
+                    </tr>
+                </table>
+                <table width="610" border="0" cellspacing="0" cellpadding="0" style="background-color:#cfe4f1;"
+                    class="m-full">
+                    <tr>
+                        <td align="center" valign="top" style="line-height:1px; height:18px;"><img
+                                src="images/wrapper/07db192f8a73aac2dd3b9a028cca9b61.gif" alt="MKT16023 shadow blue"
+                                style="display:inline-block" border="0" class="m-full m-center" width="610" /></td>
+                    </tr>
+                </table>
+                <table width="610" border="0" cellspacing="0" cellpadding="0" bgcolor="#cfe4f1" class="m-full">
+                    <tr>
+                        <td align="left"
+                            style="font-family: Helvetica, Arial, sans-serif; font-size:12px; line-height:14px; color:#000000; font-weight:normal; text-decoration:none; padding-left:6px; padding-right:6px;">
+                            <div style="font-size:12px; line-height:12px;">&nbsp;</div>
+                            <strong>Terms and Conditions</strong><br>
+                            Offer is valid for booked guests, is non-transferable and has no cash value. Offer is
+                            capacity controlled and category restrictions and exclusions apply. Carnival reserves the
+                            right to withdraw and/or change offer at any time without prior notice. Promotion is
+                            applicable on select ships and sail dates. Upgrade amounts are in U.S. dollars per
+                            stateroom. <strong>Must act on or before 3/15/17</strong>.<br>
+                            <br>
+                            Guarantee our messages always go straight to your inbox. Add <a
+                                href="mailto:funships@carnivalcruiselineemail.com" target="_blank"
+                                style="color:#000000;">funships@carnivalcruiselineemail.com</a> to your Address Book or
+                            Safe List.<br>
+                            <br>
+                            <a href="http://www.carnival.com/emailoptout/?email=%%Emailaddr%%" target="_blank"
+                                style="color:#000000;">Unsubscribe</a> from our mailing list or send a request by mail
+                            to Carnival Cruise Line: Carnival Place, 3655 NW 87th Avenue, Miami, FL 33178-2428. Attn:
+                            Interactive Marketing.<br>
+                            <br>
+                            &copy;%%=Datepart(Now(1),'y')=%% Carnival Corporation. All rights reserved. Ships' Registry:
+                            The Bahamas, Panama and Malta.<br>
+                            <br>
+                        </td>
                     </tr>
                     <tr>
-                      <td width="12" valign="top"><div class="bullet" style="font-size:14px; text-align:center; color: #10559a; font-weight:bold">&bull;</div></td>
-                      <td><div class="li" style="font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:18px; font-weight:bold; color: #10559a"> Priority embarkation and debarkation </div>
-                        <div class="li-margin-bottom" style="font-size:6px; line-height: 6px;">&nbsp;</div></td>
+                        <td align="right"
+                            style="font-family:Helvetica,Arial,sans-serif;color:#000000;font-size:10px;line-height:13px">
+                            <a target="_blank" style="color:#000000; text-decoration:underline"
+                                href="https://help.carnival.com/app/ask/">Help</a>&nbsp;&nbsp;<a target="_blank"
+                                style="color:#000000; text-decoration:underline"
+                                href="http://www.carnival.com/about-carnival/legal-notice/privacy-policy.aspx">Privacy</a>&nbsp;&nbsp;<a
+                                target="_blank" style="color:#000000; text-decoration:underline"
+                                href="http://www.carnival.com/about-carnival/about-us.aspx">About Carnival</a><br>
+                            <div style="font-size:16px; line-height:16px;">&nbsp;</div>
+                        </td>
                     </tr>
-                    <tr>
-                      <td width="12" valign="top"><div class="bullet" style="font-size:14px; text-align:center; color: #10559a; font-weight:bold">&bull;</div></td>
-                      <td><div class="li" style="font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:18px; font-weight:bold; color: #10559a"> One of our most spacious rooms, complete with a whirlpool tub </div>
-                        <div class="li-margin-bottom" style="font-size:6px; line-height: 6px;">&nbsp;</div></td>
-                    </tr>
-                  </table>
-                  <div style="font-size:14px; line-height:14px;">&nbsp;</div>
-                  <a class="image_fix" href="https://secure.carnival.com/BookedGuest/Offers/UpgradeOfferBooking" style="text-decoration:none;"><img class="image-fix" style="border:none;" src="images/wrapper/7d70bdffad28726011853deaf249c11d.gif" alt="" width="139"></a>
-                  <div style="font-size:20x; line-height:20px;">&nbsp;</div>
-                  </td>
-              </tr>
-            </table></td>
-          <td width="25" class="m-width-15">&nbsp;</td>
+                </table>
+            <td width="15" class="m-width-10">&nbsp;</td>
         </tr>
-      </table>
-      <img class="m-full" src="images/slideshow/ship-overhead_1000.jpg" alt="16040 f gs btm" width="610" style="display:block;">
-      <table width="610" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="m-full" style="height:80px;">
+        <!-- /footer -->
+    </table>
+    <table width="640" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#cfe4f1" class="address">
         <tr>
-          <td><table class="m-full" align="left" border="0" cellspacing="0" cellpadding="0" width="48%">
-              <tr>
-                <td align="right" class="m-center"><div style="font-size:17px; line-height:17px;" class="m-height-18">&nbsp;</div>
-                  <img src="images/wrapper/7918ddbbf71d2554602bf95a3109c93e.gif" alt="Lets get social" style="display:inline-block" border="0" class="m-center" width="162" />
-                  <div style="font-size:11px; line-height:11px;">&nbsp;</div></td>
-              </tr>
-            </table>
-            
-            <!-- /left -->
-            
-            <div style="font-size:12px; line-height:12px;" class="m-hide">&nbsp;</div>
-            <table class="m-full" align="right" border="0" cellspacing="0" cellpadding="0" width="48%">
-              <tr>
-                <td align="left"><table width="156" border="0" cellspacing="0" cellpadding="0" class="m-center">
-                    <tr>
-                      <td width="30"><a href="https://www.facebook.com/Carnival" target="_blank" style="display:block; float: none; text-align: center;"><img src="images/wrapper/aa18c739fef2fda9c33e3ab43601f8d6.gif" alt="Facebook icon" style="display:inline-block" border="0" class="m-center" width="30" /></a></td>
-                      <td width="11">&nbsp;</td>
-                      <td width="30"><a href="https://twitter.com/CarnivalCruise" target="_blank" style="display:block; float: none; text-align: center;"><img src="images/wrapper/d4558bd85755f8b7ffcc1c589e37e23d.gif" alt="Twitter icon" style="display:inline-block" border="0" class="m-center" width="30" /></a></td>
-                      <td width="11">&nbsp;</td>
-                      <td width="30"><a href="https://www.instagram.com/carnival" target="_blank" style="display:block; float: none; text-align: center;"><img src="images/wrapper/4749398960a56bb21d80f8014f06e3c6.gif" alt="Instagram icon" style="display:inline-block" border="0" class="m-center" width="30" /></a></td>
-                      <td width="11">&nbsp;</td>
-                      <td width="30"><a href="https://www.youtube.com/user/Carnival" target="_blank" style="display:block; float: none; text-align: center;"><img src="images/wrapper/feccdf7e16b6241d08e4207844281876.gif" alt="YouTube icon" style="display:inline-block" border="0" class="m-center" width="30" /></a></td>
-                    </tr>
-                  </table>
-                  <div style="font-size:11px; line-height:11px;" class="m-height-18">&nbsp;</div></td>
-              </tr>
-            </table>
-            
-            <!-- /right --></td>
-        </tr>
-      </table>
-      <table width="610" border="0" cellspacing="0" cellpadding="0" style="background-color:#cfe4f1;" class="m-full">
-        <tr>
-          <td align="center" valign="top" style="line-height:1px; height:18px;"><img src="images/wrapper/07db192f8a73aac2dd3b9a028cca9b61.gif" alt="MKT16023 shadow blue" style="display:inline-block" border="0" class="m-full m-center" width="610" /></td>
-        </tr>
-      </table>
-      <table width="610" border="0" cellspacing="0" cellpadding="0" bgcolor="#cfe4f1" class="m-full">
-        <tr>
-          <td align="left" style="font-family: Helvetica, Arial, sans-serif; font-size:12px; line-height:14px; color:#000000; font-weight:normal; text-decoration:none; padding-left:6px; padding-right:6px;"><div style="font-size:12px; line-height:12px;">&nbsp;</div>
-            <strong>Terms and Conditions</strong><br>
-            Offer is valid for booked guests, is non-transferable and has no cash value. Offer is capacity controlled and category restrictions and exclusions apply. Carnival reserves the right to withdraw and/or change offer at any time without prior notice. Promotion is applicable on select ships and sail dates. Upgrade amounts are in U.S. dollars per stateroom. <strong>Must act on or before 3/15/17</strong>.<br>
-            <br>
-            Guarantee our messages always go straight to your inbox. Add <a href="mailto:funships@carnivalcruiselineemail.com" target="_blank" style="color:#000000;">funships@carnivalcruiselineemail.com</a> to your Address Book or Safe List.<br>
-            <br>
-            <a href="http://www.carnival.com/emailoptout/?email=%%Emailaddr%%" target="_blank" style="color:#000000;">Unsubscribe</a> from our mailing list or send a request by mail to Carnival Cruise Line: Carnival Place, 3655 NW 87th Avenue, Miami, FL 33178-2428. Attn: Interactive Marketing.<br>
-            <br>
-            &copy;%%=Datepart(Now(1),'y')=%% Carnival Corporation. All rights reserved. Ships' Registry: The Bahamas, Panama and Malta.<br>
-            <br></td>
+            <td width="15" style="font-size:1px; line-height:1px; height:15px;" class="m-width-10">&nbsp;</td>
+            <td align="left"
+                style="font-family: Helvetica, Arial, sans-serif; font-size:12px; line-height:14px; color:#000000; font-weight:normal; text-decoration:none;">
+            </td>
+            <td width="15" style="font-size:1px; line-height:1px; height:15px;" class="m-width-10">&nbsp;</td>
         </tr>
         <tr>
-          <td align="right" style="font-family:Helvetica,Arial,sans-serif;color:#000000;font-size:10px;line-height:13px"><a target="_blank" style="color:#000000; text-decoration:underline" href="https://help.carnival.com/app/ask/">Help</a>&nbsp;&nbsp;<a target="_blank" style="color:#000000; text-decoration:underline" href="http://www.carnival.com/about-carnival/legal-notice/privacy-policy.aspx">Privacy</a>&nbsp;&nbsp;<a target="_blank" style="color:#000000; text-decoration:underline" href="http://www.carnival.com/about-carnival/about-us.aspx">About Carnival</a><br>
-            <div style="font-size:16px; line-height:16px;">&nbsp;</div></td>
+            <td width="15" style="font-size:1px; line-height:1px; height:15px;" class="m-width-10">&nbsp;</td>
+            <td width="610" style="font-size:1px; line-height:1px; height:15px;" align="center"><img
+                    src="images/wrapper/spacer.gif" width="1" height="15" class="m-hide" alt="" /></td>
+            <td width="15" style="font-size:1px; line-height:1px; height:15px;" class="m-width-10">&nbsp;</td>
         </tr>
-      </table>
-    <td width="15" class="m-width-10">&nbsp;</td>
-  </tr>
-  <!-- /footer -->
-</table>
-<table width="640" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#cfe4f1" class="address">
-  <tr>
-    <td width="15" style="font-size:1px; line-height:1px; height:15px;" class="m-width-10">&nbsp;</td>
-    <td align="left" style="font-family: Helvetica, Arial, sans-serif; font-size:12px; line-height:14px; color:#000000; font-weight:normal; text-decoration:none;"></td>
-    <td width="15" style="font-size:1px; line-height:1px; height:15px;" class="m-width-10">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="15" style="font-size:1px; line-height:1px; height:15px;" class="m-width-10">&nbsp;</td>
-    <td width="610" style="font-size:1px; line-height:1px; height:15px;" align="center"><img src="https://lacek.hs.llnwd.net/e1/tlg/mms/mediagallery/images/spacer.gif" width="1" height="15" class="m-hide" alt=""/></td>
-    <td width="15" style="font-size:1px; line-height:1px; height:15px;" class="m-width-10">&nbsp;</td>
-  </tr>
-</table>
+    </table>
 </body>
+
 </html>
