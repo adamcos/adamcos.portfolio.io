@@ -1,41 +1,52 @@
 <!doctype html>
 <html>
+
 <head>
-<title>Adam Costello :: Video in Email Test</title>
-<style type="text/css">
-.video-wrapper {
-	display: none;
-}
- @media (-webkit-min-device-pixel-ratio: 0) and (min-device-width:1024px) {
- .video-wrapper {
- display: block !important;
-}
- .video-fallback {
- display: none !important;
-}
-}
- @supports (-webkit-overflow-scrolling:touch) and (color:#ffffffff) {
- div[class^=video-wrapper] {
- display: block !important;
-}
- div[class^=video-fallback] {
- display: none !important;
-}
-}
-#MessageViewBody .video-wrapper {
-	display: block !important;
-}
-#MessageViewBody .video-fallback {
-	display: none !important;
-}
-</style>
+      <title>Adam Costello :: Video in Email Test</title>
+      <style type="text/css">
+            .video-wrapper {
+                  display: none;
+            }
+
+            @media (-webkit-min-device-pixel-ratio: 0) and (min-device-width:1024px) {
+                  .video-wrapper {
+                        display: block !important;
+                  }
+
+                  .video-fallback {
+                        display: none !important;
+                  }
+            }
+
+            @supports (-webkit-overflow-scrolling:touch) and (color:#ffffffff) {
+                  div[class^=video-wrapper] {
+                        display: block !important;
+                  }
+
+                  div[class^=video-fallback] {
+                        display: none !important;
+                  }
+            }
+
+            #MessageViewBody .video-wrapper {
+                  display: block !important;
+            }
+
+            #MessageViewBody .video-fallback {
+                  display: none !important;
+            }
+      </style>
 </head>
+
 <body style="background-color:#b1d1fa; font-family:Arial, Helvetica, sans-serif;">
-<p align="center">Fallback video page</p>
+      <p align="center">Fallback video page</p>
       <div>
-        <video style="display:block; margin:40px auto;" width="50%" height="auto" controls="controls" poster="https://adamcos.github.io/adamcos.portfolio.io/emails/video/images/poster.jpg"
-                        src="https://adamcos.github.io/adamcos.portfolio.io/emails/video/images/190417_Drone_Reel_large.mp4">
-          </video>
+            <video autoplay="autoplay" style="display:block; margin:40px auto;" width="50%" height="auto"
+                  controls="controls"
+                  poster="https://adamcos.github.io/adamcos.portfolio.io/emails/video/images/fallback3.jpg"
+                  src="https://adamcos.github.io/adamcos.portfolio.io/emails/video/images/190417_Drone_Reel_large.mp4">
+            </video>
       </div>
 </body>
+
 </html>
