@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<title>Adam Costello :: Video in Email Test</title>
+<style type="text/css">
+.video-wrapper {
+	display: none;
+}
+ @media (-webkit-min-device-pixel-ratio: 0) and (min-device-width:1024px) {
+ .video-wrapper {
+ display: block !important;
+}
+ .video-fallback {
+ display: none !important;
+}
+}
+ @supports (-webkit-overflow-scrolling:touch) and (color:#ffffffff) {
+ div[class^=video-wrapper] {
+ display: block !important;
+}
+ div[class^=video-fallback] {
+ display: none !important;
+}
+}
+#MessageViewBody .video-wrapper {
+	display: block !important;
+}
+#MessageViewBody .video-fallback {
+	display: none !important;
+}
+</style>
+</head>
+<body style="background-color:#b1d1fa;">
+<table width="600" border="0" cellspacing="0" cellpadding="0"
+        style="margin:auto; border-right:solid 1px black; border-left:solid 1px black; border-top:solid 1px black; background-color: #ffffff;">
+
+  <tr>
+    <td><!-- video section -->
+      <div class="video-wrapper" style="display:none;">
+        <video width="100%" height="auto" controls="controls" poster="images/poster.jpg"
+                        src="https://adamcos.github.io/adamcos.portfolio.io/emails/video/images/190417_Drone_Reel_large.mp4">
+          <!-- fallback 1 -->
+          <a href="##"><img width="100%" height="auto" src="https://adamcos.github.io/adamcos.portfolio.io/emails/video/images/fallback1.jpg" /></a> </video>
+      </div>
+      <!-- fallback section -->
+      <div class="video-fallback">
+        <p>Fallback Content</p>
+        <a href="##"><img width="100%" height="auto" src="https://adamcos.github.io/adamcos.portfolio.io/emails/video/images/fallback2.jpg" /></a> </div></td>
+  </tr>
+</table>
+<table width="600" border="0" cellspacing="0" cellpadding="0"
+        style="margin:auto; border-right:solid 1px black; border-left:solid 1px black; border-bottom:solid 1px black; background-color: #ffffff;">
+  <tr>
+    <td><table border="0" cellspacing="0" cellpadding="0" style="width: 100%; font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height:18px;">
+        <tr>
+          <td style="text-align: center; font-weight: bold; font-size: 20px; line-height:20px; padding: 10px 0px;"> Adam Costello : Video in Email Test </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                    style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height:18px;">
+        <tr>
+          <td width="50%" style="padding:10px 20px; background-color: aliceblue; vertical-align: top; border-right:solid 1px #b1d1fa; border-top:solid 1px #b1d1fa; border-bottom:solid 1px #b1d1fa;"><strong>There are 3 scenarios:</strong>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="5%">&bull;</td>
+                <td width="95%">video plays in email client</td>
+              </tr>
+              <tr>
+                <td width="5%">&bull;</td>
+                <td width="95%">fallback image #1 displays, links to video file</td>
+              </tr>
+              <tr>
+                <td width="5%">&bull;</td>
+                <td width="95%">fallback image #2 as static image</td>
+              </tr>
+          </table> 
+          <div style="font-size:14px; line-height:14px;">&nbsp;</div></td>
+          <td width="50%" style="padding:10px 20px; background-color: aliceblue; vertical-align: top; border-top:solid 1px #b1d1fa; border-bottom:solid 1px #b1d1fa;"> 
+            This is by no means a comprehensive test, just a proof of concept that videos can be embedded in emails.
+            Email clients have varying degrees of support, so robust testing and acceptable user experience should be implemented.
+            <div style="font-size:14px; line-height:14px;">&nbsp;</div>            
+          </td>
+        </tr>
+        
+      </table>
+            
+            <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; font-family:Arial, Helvetica, sans-serif;">
+        <tr>
+          <td style="text-align: center; font-weight: bold; font-size: 18px; line-height:22px; padding: 10px 40px;"> <div style="font-size:14px; line-height:14px;">&nbsp;</div>
+          If your email client does not allow video tags, you'll see one of two fallback images. 
+          <div style="font-size:14px; line-height:14px;">&nbsp;</div></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                    style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height: 14px;">
+        <tr>
+          <td width="50%" align="center" style="padding:10px 20px; background-color: aliceblue; vertical-align: top; border-right:solid 1px #b1d1fa; border-top:solid 1px #b1d1fa;"> 
+            <div style="font-size:14px; line-height:14px;">&nbsp;</div>
+            <table width="250" border="0" cellspacing="0" cellpadding="0" align="center"><tr><td>
+<img src="https://adamcos.github.io/adamcos.portfolio.io/emails/video/images/fallback1.jpg" width="250" height="auto" /></td></tr></table>
+          <div style="font-size:14px; line-height:14px;">&nbsp;</div>
+            Fallback image #1            
+            <div style="font-size:14px; line-height:14px;">&nbsp;</div></td>
+          <td width="50%" align="center" style="padding:10px 20px; background-color: aliceblue; vertical-align: top; border-top:solid 1px #b1d1fa;"><div style="font-size:14px; line-height:14px;">&nbsp;</div>
+            <table width="250" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+              <td><img src="https://adamcos.github.io/adamcos.portfolio.io/emails/video/images/fallback2.jpg" alt="" width="250" height="auto" /></td>
+            </tr>
+          </table>
+              <div style="font-size:14px; line-height:14px;">&nbsp;</div>
+            Fallback image #2          
+            <div style="font-size:14px; line-height:14px;">&nbsp;</div></td>
+        </tr>
+      </table>
+      <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height:18px; border-top:solid 1px #b1d1fa; border-bottom:solid 1px #b1d1fa;">
+        <tr>
+          <td style="text-align: center; font-weight: normal; font-size: 14px; line-height:18px; padding: 10px 0px; background-color: aliceblue;"><div style="font-size:14px; line-height:14px;">&nbsp;</div>            
+          <a href="https://www.hteumeuleu.com/2016/what-you-need-to-know-about-apple-mail-in-ios-10/" style="color:brown;">Here is an article</a> for more information on support. 
+          <div style="font-size:14px; line-height:14px;">&nbsp;</div>
+          <a href="https://www.emailonacid.com/blog/article/email-development/a_how_to_guide_to_embedding_html5_video_in_email/"
+                                style="color: brown;">This EoA article</a> demonstrates how to implement the code, with appropriate fallbacks. 
+                                
+                                <div style="font-size:14px; line-height:14px;">&nbsp;  </div><a href="https://www.campaignmonitor.com/resources/guides/video-in-email/"
+                                style="color: brown;">Another great explanation</a> the process on Campaign Monitor.        
+          <div style="font-size:14px; line-height:14px;">&nbsp;</div></td>
+        </tr>
+      </table>
+      <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height:18px;">
+        <tr>
+          <td style="text-align: center; font-weight: normal; font-size: 14px; line-height:18px; padding: 10px 0px;"> Video footage and still images &copy; Mark Brown / Twin Town Media. <br>
+          Used with permission </td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>
