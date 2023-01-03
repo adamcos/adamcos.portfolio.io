@@ -1,115 +1,153 @@
 <!doctype html>
-
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>MN Lakes : Adam's Top Picks</title>
-  <meta name="description" content="A simple HTML5 Template for new projects.">
-  <meta name="author" content="SitePoint">
-
-  <meta property="og:title" content="A Basic HTML5 Template">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
-
-  <link rel="icon" href="../favicon.ico">
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MN Lakes : Adam's Top Picks</title>
+<meta name="description" content="A simple HTML5 Template for new projects.">
+<meta name="author" content="SitePoint">
+<meta property="og:title" content="A Basic HTML5 Template">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+<meta property="og:description" content="A simple HTML5 Template for new projects.">
+<meta property="og:image" content="image.png">
+<link rel="icon" href="../favicon.ico">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css?v=1.0">
+<style>
+.main {
+	margin: 30px auto;
+	text-align: center;
+	
+}
+.main table {
+	font-size:14px;
+	line-height:17px;
+}
+th {
+	background-color:#4F8FFF;
+	color:#FFFFFF;
+	font-size:18px;
+}
+tr:hover th {
+	background-color: #4F8FFF;
+	color: #ffffff;
+}
+td, th {
+	border-bottom: solid 1px black;
+	font-family: sans-serif;
+}
+tr:hover {
+	background-color:#2F8FA0;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+a {
+	font-weight:bold;
+	text-decoration:none;
+	font-size:18px;
+}
+tr:hover a {
+	color:#FFFFFF;
+}
+a:hover {
+	text-decoration:underline;
+}
+</style>
 </head>
-
 <body>
-  <table width="800" border="0" cellpadding="4" cellspacing="0" style="display:block; margin:auto;">
+<div class="main">
+  <table style="display:inline-table" width="auto" border="0" cellpadding="10" cellspacing="0">
     <tr>
-      <th width="106">Lake Name</th>
-      <th width="116">County</th>
-      <th width="135">Target Species</th>
-      <th width="304">Notes</th>
-      <th width="99">Map</th>
+      <th>MN DNR Info</th>
+      <th>County</th>
+      <th>Topo Map</th>
+      <th>Target Species</th>
+      <th>Notes</th>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86002300" target="_blank">Beebe</a></td>
       <td align="center">Wright</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=k%7CurGtgd%7BP" target="_blank">X</a></td>
       <td align="center">Crappie, Bluegill, Perch</td>
-      <td align="center">Very high crappie numbers, high walleyes. Good size on both</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=k%7CurGtgd%7BP" target="_blank">Beebe</a></td>
+      <td align="center">Very high crappie numbers, high walleyes. <br>
+        Good size on both</td>
     </tr>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86022100" target="_blank">Camp</a></td>
       <td align="center">Wright</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@14&amp;key=_vsrG%60th%7DP" target="_blank">X</a></td>
       <td align="center">Crappie, Bluegill</td>
       <td align="center">High fish numbers, smaller bluegills</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@14&amp;key=_vsrG%60th%7DP" target="_blank">Camp</a></td>
     </tr>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86027400" target="_blank">Dans</a></td>
       <td align="center">Wright</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@14&amp;key=wczrGffu%7DP" target="_blank">X</a></td>
       <td align="center">Crappie</td>
       <td align="center">Huge crappie numbers. <br />
-      Very old data, probably not worth it</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@14&amp;key=wczrGffu%7DP" target="_blank">Dans</a></td>
+        Very old data, probably not worth it</td>
     </tr>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=10012100" target="_blank">Eagle</a></td>
       <td align="center">Carver</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=oqnpGzui%7CP" target="_blank">X</a></td>
       <td align="center">Crappie</td>
       <td align="center">Possible winterkill 2018-19</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=oqnpGzui%7CP" target="_blank">Eagle</a></td>
     </tr>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86021700" target="_blank">Granite</a></td>
       <td align="center">Wright</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@12&amp;key=%7BbxrGj%7Ck%7DP" target="_blank">X</a></td>
       <td align="center">Walleye, Pike</td>
       <td align="center">Good walleye and pike numbers. Big pike</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@12&amp;key=%7BbxrGj%7Ck%7DP" target="_blank">Granite</a></td>
     </tr>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=27019900" target="_blank">Hafften</a></td>
       <td align="center">Hennepin</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@14&amp;key=qpfrGfrwzP" target="_blank">X</a></td>
       <td align="center">Crappie</td>
       <td align="center">Good crappie numbers, smaller size</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@14&amp;key=qpfrGfrwzP" target="_blank">Hafften</a></td>
     </tr>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86028800" target="_blank">John</a></td>
       <td align="center">Wright</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@12&amp;key=urfsGbuv%7DP" target="_blank">X</a></td>
       <td align="center">Walleye</td>
-      <td align="center">Higher number, bigger size</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@12&amp;key=urfsGbuv%7DP" target="_blank">John</a></td>
+      <td align="center">High numbers, bigger size</td>
     </tr>
     <tr>
-      <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86022900" target="_blank">Mink</a>+<a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86023000" target="_blank">Somers</a></td>
+      <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86022900" target="_blank">Mink </a>+ <a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86023000" target="_blank">Somers</a></td>
       <td align="center">Wright</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@12&amp;key=cthsGn%7B%7B%7CP" target="_blank">X</a></td>
       <td align="center">Crappie</td>
-      <td align="center">Very high numbers of bigger fish, but possession limit of 5</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@12&amp;key=cthsGn%7B%7B%7CP" target="_blank">Mink+Somers</a></td>
+      <td align="center">Very high numbers of bigger fish,<br>
+        but possession limit of 5</td>
     </tr>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=10004200" target="_blank">Parley</a></td>
       <td align="center">Carver</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=cb%7DpGx%7Ca%7BP" target="_blank">X</a></td>
       <td align="center">Crappie, Bluegill, Walleye</td>
       <td align="center">High numbers for all 3, bigger crappies</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=cb%7DpGx%7Ca%7BP" target="_blank">Parley</a></td>
     </tr>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=86018200" target="_blank">Rock</a></td>
       <td align="center">Wright</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=miurGn~x%7CP" target="_blank">X</a></td>
       <td align="center">Crappie</td>
-      <td align="center">Lots of crappie, decent walleye numbers. Both on the bigger side.</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=miurGn~x%7CP" target="_blank">Rock</a></td>
+      <td align="center">Lots of crappie, decent walleye numbers. <br>
+        Both on the bigger side.</td>
     </tr>
     <tr>
       <td align="center"><a href="https://www.dnr.state.mn.us/lakefind/showreport.html?downum=10009500" target="_blank">Swede</a></td>
       <td align="center">Wright</td>
+      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=yhfqGths%7BP" target="_blank">X</a></td>
       <td align="center">Crappie, Bluegill, Perch</td>
       <td align="center">Ridiculous numbers of crappie and perch</td>
-      <td align="center"><a href="https://webapp.navionics.com/#boating@13&amp;key=yhfqGths%7BP" target="_blank">Swede</a></td>
     </tr>
-</table>
-  <script src="js/scripts.js"></script>
+  </table>
+</div>
+<script src="js/scripts.js"></script>
 </body>
 </html>
